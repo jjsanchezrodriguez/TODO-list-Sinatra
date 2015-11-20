@@ -21,7 +21,7 @@
   end
 
   it "return new fild created_at" do
-    expect(task.created_at.strftime("%x")).to eq("11/11/15")
+    expect(task.created_at.strftime("%x")).to eq("11/19/15")
   end
 
   it "return new content task" do

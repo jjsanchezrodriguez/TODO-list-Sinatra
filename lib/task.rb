@@ -1,7 +1,7 @@
 require "time"
 
 class Task
-    attr_reader :content, :user, :id, :complete, :created_at, :update_content
+    attr_reader :content, :id, :complete, :created_at, :update_content
     @@current_id = 1
     def initialize(content, user = "")
         @content = content

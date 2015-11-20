@@ -1,0 +1,20 @@
+---
+Pedrito:
+- !ruby/object:Task
+  content: 3 sf sfg sfdg
+  id: 3
+  complete: false
+  created_at: 2015-11-19 21:35:51.712552850 +01:00
+  update_content: 
+- !ruby/object:Task
+  content: Ir a la tintoreria
+  id: 2
+  complete: false
+  created_at: 2015-11-19 21:35:36.879289031 +01:00
+  update_content: 
+- !ruby/object:Task
+  content: Comprar Patatas
+  id: 1
+  complete: false
+  created_at: 2015-11-19 21:35:36.879277382 +01:00
+  update_content: 

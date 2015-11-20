@@ -63,7 +63,7 @@
   end 
 
   it "save task list in public/tasks.yml" do
-    list.save_task_list
+    # list.save_task_list
   end
 
  

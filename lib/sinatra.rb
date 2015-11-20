@@ -7,13 +7,14 @@ class TodoList
  	def initialize(user)
  		@task_list = task_list
  		@user = user
- 		@todo_store = YAML::Store.new("../public/tasks.yml")
+ 		@todo_store = YAML::Store.new("./public/tasks.yml")
  		@task_list =[Task.new("Comprar Patatas"), Task.new("Ir a la tintoreria")]
 
  	end
 
  	def add_item_list(content)
- 		@task_list << Task.new(content)
+ 		@task_list << Task.new(content) 
+
  	end
 
  	def choose_task_list_by_id
@@ -44,11 +45,13 @@ class TodoList
  		empty
  	end
 
- 	def change_state_task(pos)
+ 	def change_state_task(id)
+ 		pos = find_task_by_id(id)
 		@task_list[pos].make_incomplete!
  	end
 
- 	def complete_task(pos)
+ 	def complete_task(id)
+ 		pos = find_task_by_id(id)
 		@task_list[pos].complete!
  	end
 
@@ -64,11 +67,19 @@ class TodoList
  		end	
  	end
 
- 	def change_task_content_of_list(id)
+ 	# Sin sinatra asi funcionaba con los test y por consola
+ 	# def change_task_content_of_list(id)
+ 	# 	pos = find_task_by_id(id)
+ 	# 	puts show_task_in_list(pos)
+ 	# 	puts "Please intro new content"
+ 	# 	@task_list[pos].change_update_content(gets.chomp) 
+ 	# 	@task_list[pos].change_update_content_state!
+ 	# end
+
+ 	# Cambiado para sinatra
+ 	def change_task_content_of_list(id, new_content)
  		pos = find_task_by_id(id)
- 		puts show_task_in_list(pos)
- 		puts "Please intro new content"
- 		@task_list[pos].change_update_content(gets.chomp) 
+ 		@task_list[pos].change_update_content(new_content) 
  		@task_list[pos].change_update_content_state!
  	end
 
